@@ -34,92 +34,97 @@ The purpose of the assessment was to understand common web application vulnerabi
 
 ---
 
-## Methodology
+# Methodology
 
-Reconnaissance
+The assessment followed a structured testing methodology:
 
-↓
-
-Input Analysis
-
-↓
-
-Payload Testing
-
-↓
-
-Validation
-
-↓
-
-Evidence Collection
-
-↓
-
-Documentation
-
-↓
-
-Remediation
+1. Reconnaissance
+2. Intercepting HTTP traffic using Burp Suite
+3. Manual payload injection
+4. Request modification
+5. Response analysis
+6. Vulnerability validation
+7. Risk assessment
+8. Documentation
+9. Remediation recommendations
 
 ---
 
-## Documentation
+# Key Findings
 
-- 📄 [Findings](findings.md)
-- 🛡️ [Remediation](remediation.md)
-- 📑 [Assessment Report](report/report.md)
-- 🖼️ [Evidence & Screenshots](screenshots.md)
+## 1. SQL Injection
 
----
+**Severity:** High
 
-# SQL Injection
+The application concatenates user-controlled input directly into SQL queries without validation or parameterized statements.
 
-## Objective
+**Impact**
 
-Demonstrate SQL Injection testing using DVWA and Burp Suite.
+- Authentication bypass
+- Database enumeration
+- Sensitive information disclosure
+- Potential database compromise
 
-## Environment
+Documentation:
 
-- DVWA
-- Kali Linux
-- Burp Suite Community Edition
-- Apache
-- PHP
-- MySQL
-
-## Vulnerability
-
-The application directly inserts user-controlled input into an SQL query without parameterized statements.
-
-Payload used:
-
-```sql
-1' OR '1'='1
+```
+sql-injection/
 ```
 
-Result:
+## 2. Reflected Cross-Site Scripting (XSS)
 
-The application returned multiple database records instead of one, confirming successful SQL Injection.
+**Severity:** High
 
-## Evidence
+The application reflects unsanitized user input directly into the HTML response, allowing arbitrary JavaScript execution in the user's browser.
 
-| Screenshot | Description |
-|------------|-------------|
-| 01 | DVWA Security Level |
-| 02 | Normal Application Behaviour |
-| 03 | Burp Proxy Capture |
-| 04 | SQL Injection using Burp Repeater |
-| 05 | Vulnerable Source Code |
+### Demonstrated Payloads
 
-## Skills Demonstrated
+```html
+<script>alert(1)</script>
+```
 
-- Burp Suite
+```html
+<script>alert(document.cookie)</script>
+```
+
+### Impact
+
+- JavaScript execution
+- Session cookie disclosure
+- Session hijacking
+- Phishing attacks
+- Client-side manipulation
+
+Documentation:
+
+```
+reflected-xss/
+```
+
+# Skills Demonstrated
+
+- Web Application Security Testing
+- Vulnerability Validation
 - HTTP Request Analysis
-- SQL Injection Testing
-- Command Injection Testing
-- XSS Validation
-- Security Documentation
+- Burp Suite Proxy & Repeater
+- Manual Security Testing
+- OWASP Top 10
+- Secure Coding Awareness
+- Technical Documentation
+- Vulnerability Reporting
+
+---
+
+# Learning Outcomes
+
+Through this assessment I gained practical experience in:
+
+- Identifying web application vulnerabilities
+- Understanding HTTP request/response flows
+- Exploiting vulnerabilities safely within a controlled lab
+- Assessing business and technical impact
+- Preparing professional security assessment reports
+- Recommending secure coding practices
 
 ---
 

@@ -4,7 +4,7 @@
 
 Shows DVWA configured with Low Security.
 
-![Security Level](screenshots/SQL-injection/01-security-level.png)
+![Security Level](screenshots/sql-injection/01-security-level.png)
 
 ---
 
@@ -12,7 +12,7 @@ Shows DVWA configured with Low Security.
 
 Shows normal application response for User ID = 1.
 
-![Normal Request](screenshots/SQL-injection/02-normal-request.png)
+![Normal Request](screenshots/sql-injection/02-normal-request.png)
 
 ---
 
@@ -20,7 +20,7 @@ Shows normal application response for User ID = 1.
 
 Captured request before manipulation.
 
-![Burp Proxy](screenshots/SQL-injection/03-burp-proxy-request.png)
+![Burp Proxy](screenshots/sql-injection/03-burp-proxy-request.png)
 
 ---
 
@@ -30,7 +30,7 @@ SQL Injection payload executed successfully.
 
 Returned multiple database records.
 
-![SQL Injection](screenshots/SQL-injection/04-burp-repeater-sqli.png)
+![SQL Injection](screenshots/sql-injection/04-burp-repeater-sqli.png)
 
 ---
 
@@ -38,5 +38,5 @@ Returned multiple database records.
 
 Source code reveals direct insertion of user input into SQL query.
 
-![Source Code](screenshots/SQL-injection/05-view-source.png)
+![Source Code](screenshots/sql-injection/05-view-source.png)
 

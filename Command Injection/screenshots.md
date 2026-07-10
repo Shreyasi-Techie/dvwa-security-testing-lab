@@ -2,69 +2,54 @@
 
 ## 1. Normal Application Response
 
-**File:** (01-normal-ping.png)
+Shows the default application behavior when a valid IP address is submitted.
 
-Shows the default application behavior when a valid IP address (127.0.0.1) is submitted.
-
----
-
-## 2. HTTP POST Request Captured
-
-**File:** `02-burp-intercept-post-request.png`
-
-Burp Suite intercepting the HTTP POST request sent to the vulnerable endpoint.
+![Normal Ping](screenshots/command-injection/01-normal-ping.png)
 
 ---
 
-## 3. Original Request in Burp Repeater
+## 2. Burp HTTP POST Request
 
-**File:** `03-repeater-original-request.png`
+Burp Suite intercepting the POST request.
 
-Original POST request containing the user-controlled `ip` parameter before modification.
+![POST Request](screenshots/command-injection/02-burp-intercept-post-request.png)
+
+---
+
+## 3. Original Request in Repeater
+
+Original POST request before modification.
+
+![Repeater Original](screenshots/command-injection/03-repeater-original-request.png)
 
 ---
 
 ## 4. Successful Command Injection
 
-**File:** `04-command-injection-whoami.png`
+The payload executes the `whoami` command.
 
-The payload appended an operating system command to the IP parameter.
-
-The response contains:
-
-- Ping output
-- Username (`www-data`)
-
-confirming arbitrary command execution.
+![Whoami](screenshots/command-injection/04-command-injection-whoami.png)
 
 ---
 
-## 5. Reading Sensitive Files
+## 5. Reading /etc/passwd
 
-**File:** `05-sensitive-file-read-passwd.png`
+Sensitive file disclosure via command injection.
 
-The injected command displayed the contents of `/etc/passwd`, demonstrating the ability to access sensitive files.
+![Passwd](screenshots/command-injection/cmd_05_sensitive_file_read_passwd.png)
 
 ---
 
 ## 6. Netcat Listener
 
-**File:** `06-netcat-listener.png`
+Attacker machine waiting for the reverse shell.
 
-Attacker machine waiting for an incoming reverse shell connection.
+![Netcat Listener](screenshots/command-injection/06-netcat-listener.png)
 
 ---
 
 ## 7. Reverse Shell Established
 
-**File:** `07-reverse-shell-established.png`
+Reverse shell successfully obtained.
 
-Successful reverse shell connection obtained.
-
-Executed commands include:
-
-- whoami
-- hostname
-- ls
-
-confirming remote command execution on the vulnerable server.
+![Reverse Shell](screenshots/command-injection/07-reverse-shell-established.png)

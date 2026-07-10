@@ -2,7 +2,7 @@
 
 ## 1. Normal Application Response
 
-**File:** `01-normal-ping.png`
+**File:** (01-normal-ping.png)
 
 Shows the default application behavior when a valid IP address (127.0.0.1) is submitted.
 

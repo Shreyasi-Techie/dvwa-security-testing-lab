@@ -36,7 +36,7 @@ The payload executes the `whoami` command.
 
 Sensitive file disclosure via command injection.
 
-![Passwd](screenshots/cmd_05_sensitive_file_read_passwd.png)
+![Passwd](screenshots/05-sensitive-file-read-passwd.png)
 
 ---
 

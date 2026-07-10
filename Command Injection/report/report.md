@@ -88,7 +88,7 @@ The application executed the injected command successfully.
 
 **Screenshot**
 
-![](screenshots/04-command-injection-whoami.png)
+![View](screenshots/04-command-injection-whoami.png)
 
 ---
 

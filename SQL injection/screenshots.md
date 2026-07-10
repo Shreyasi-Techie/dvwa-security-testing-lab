@@ -4,7 +4,7 @@
 
 Shows DVWA configured with Low Security.
 
-![Security Level](SQL injection/screenshots/01-security-level.png)
+![Security Level]SQL injection/screenshots/01-security-level.png
 
 ---
 

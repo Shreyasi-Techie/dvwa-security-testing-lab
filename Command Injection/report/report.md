@@ -86,10 +86,6 @@ www-data
 
 The application executed the injected command successfully.
 
-**Screenshot**
-
-![View](screenshots/04-command-injection-whoami.png)
-
 ---
 
 ### Test 2 – Sensitive File Disclosure
@@ -103,10 +99,6 @@ The application executed the injected command successfully.
 **Result**
 
 The server returned the contents of the `/etc/passwd` file, confirming arbitrary command execution.
-
-**Screenshot**
-
-![](screenshots/05-sensitive-file-read-passwd.png)
 
 ---
 
@@ -128,35 +120,17 @@ nc -lvnp 4444
 
 A reverse shell connection was established successfully.
 
-**Screenshot**
-
-Listener
-
-![](screenshots/06-netcat-listener.png)
-
-Reverse Shell
-
-![](screenshots/07-reverse-shell-established.png)
-
 ---
 
 ### HTTP Request Analysis
 
 Burp Suite captured the POST request containing the injected payload.
 
-**Screenshot**
-
-![](screenshots/02-burp-intercept-post-request.png)
-
 ---
 
 ### HTTP Response Analysis
 
 The application returned the output of executed operating system commands.
-
-**Screenshot**
-
-![](screenshots/03-repeater-original-request.png)
 
 ---
 
